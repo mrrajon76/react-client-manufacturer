@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddParts = () => {
+const ViewSingleItem = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const AddParts = () => {
     );
 };
 
-export default AddParts;
+export default ViewSingleItem;

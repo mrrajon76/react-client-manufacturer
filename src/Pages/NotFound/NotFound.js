@@ -12,8 +12,8 @@ const NotFound = () => {
                 <div className='flex items-center'>
                     <div className='text-center md:text-left'>
                         <h1 className='text-4xl md:text-6xl font-extrabold text-primary'>UH OH! You're lost</h1>
-                        <p className='text-lg md:text-xl my-6'>The page you are looking for does not exist. How you got here is a mystery. But you can click the button below to go back to the homepage.</p>
-                        <button className='bg-secondary hover:bg-primary text-white rounded py-3 px-6 font-semibold uppercase'><Link to='/'>Go to Homepage</Link></button>
+                        <p className='text-lg md:text-xl text-white my-6'>The page you are looking for does not exist. How you got here is a mystery. But you can click the button below to go back to the homepage.</p>
+                        <button className='bg-secondary hover:bg-accent text-white rounded py-3 px-6 font-semibold uppercase'><Link to='/'>Go to Homepage</Link></button>
                     </div>
                 </div>
             </div>

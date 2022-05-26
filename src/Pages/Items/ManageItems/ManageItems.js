@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ManageParts = () => {
+const ManageItems = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const ManageParts = () => {
     );
 };
 
-export default ManageParts;
+export default ManageItems;

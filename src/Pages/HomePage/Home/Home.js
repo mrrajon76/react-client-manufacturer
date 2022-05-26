@@ -1,9 +1,15 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 
 const Home = () => {
     return (
         <div>
-            <h1 className='text-center text-4xl font-bold'>Hello from gelloo!</h1>
+            <Header />
+
+            <div className='min-h-[72vh] px-6 md:px-12 lg:px-24'></div>
+
+            <Footer />
         </div>
     );
 };
