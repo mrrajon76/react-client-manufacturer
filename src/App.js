@@ -16,6 +16,8 @@ import SingleItem from './Pages/Items/ManageItems/SingleItem/SingleItem';
 import Purchase from './Pages/Items/Purchase/Purchase';
 import Login from './Pages/Users/Login/Login';
 import Register from './Pages/Users/Register/Register';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
 
         <Route path='*' element={<NotFound />} />
       </Routes>
+
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

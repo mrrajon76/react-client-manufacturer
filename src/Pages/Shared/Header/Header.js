@@ -22,18 +22,18 @@ const Header = () => {
                 <div className='py-3'>
                     <Link to='/'><img src={logo} alt="" className='block mx-auto w-64' /></Link>
                 </div>
-                <div className='bg-accent py-3'>
+                <div className='bg-primary py-3'>
                     <div className='nav text-white text-[17px] space-x-14 flex justify-center'>
-                        <CustomLink to='/'>Home</CustomLink>
-                        <CustomLink to='/all-items'>All Items</CustomLink>
+                        <CustomLink className='pb-1' to='/'>Home</CustomLink>
+                        <CustomLink className='pb-1' to='/all-items'>All Items</CustomLink>
                         {
-                            user ? <CustomLink to='/dashboard'>Dashboard</CustomLink> : <></>
+                            user ? <CustomLink className='pb-1' to='/dashboard'>Dashboard</CustomLink> : <></>
                         }
-                        <CustomLink to='/my-portfolio'>My Portfolio</CustomLink>
-                        <CustomLink to='/blogs'>Blogs</CustomLink>
+                        <CustomLink className='pb-1' to='/my-portfolio'>My Portfolio</CustomLink>
+                        <CustomLink className='pb-1' to='/blogs'>Blogs</CustomLink>
                         <span className='mx-3 border-r-2 border-gray-300'></span>
                         {
-                            user ? <span className='cursor-pointer' onClick={handleSignOut}><BiLogOutCircle className='inline text-2xl' /> Sign Out</span> : <CustomLink to='/login'><BiLogInCircle className='inline text-2xl' /> Login</CustomLink>
+                            user ? <span className='cursor-pointer' onClick={handleSignOut}><BiLogOutCircle className='inline text-2xl' /> Sign Out</span> : <CustomLink className='pb-1' to='/login'><BiLogInCircle className='inline text-2xl' /> Login</CustomLink>
                         }
                     </div>
                 </div>
@@ -43,7 +43,7 @@ const Header = () => {
             <div className='lg:hidden flex justify-between items-center px-3 md:px-10 py-3 shadow-lg shadow-slate-200'>
                 <div onClick={() => setOpen(!open)}>
                     {
-                        open ? <HiX className='text-2xl md:text-3xl text-secondary' /> : <HiMenuAlt2 className='text-2xl md:text-3xl text-accent' />
+                        open ? <HiX className='text-2xl md:text-3xl text-secondary' /> : <HiMenuAlt2 className='text-2xl md:text-3xl text-primary' />
                     }
                     <div className={`nav font-semibold flex flex-col space-y-3 py-4 left-0 absolute w-full text-center transition-all ease-in-out duration-700 z-30 text-white bg-secondary ${open ? 'md:top-20 top-16' : 'top-[-300px]'}`}>
                         <Link to='/'>Home</Link>
@@ -61,7 +61,7 @@ const Header = () => {
                 <div>
 
                     {
-                        user ? <span className='cursor-pointer' onClick={handleSignOut}><BiLogOutCircle className='inline text-2xl md:text-3xl text-lime-500' /> Sign Out</span> : <Link to='/login' className='font-semibold'><BiLogInCircle className='inline text-2xl md:text-3xl text-accent' /> Login</Link>
+                        user ? <span className='cursor-pointer' onClick={handleSignOut}><BiLogOutCircle className='inline text-2xl md:text-3xl text-lime-500' /> Sign Out</span> : <Link to='/login' className='font-semibold'><BiLogInCircle className='inline text-2xl md:text-3xl text-primary' /> Login</Link>
                     }
                 </div>
             </div>
