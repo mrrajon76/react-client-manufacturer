@@ -2,16 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
-import { RiMedal2Line } from 'react-icons/ri'
-import { GiCargoShip } from 'react-icons/gi'
-import { BiSupport } from 'react-icons/bi'
-import { GoFlame } from 'react-icons/go'
-import { FaSmile, FaChartLine, FaUsersCog, FaCubes } from 'react-icons/fa'
-import './Home.css'
+import { RiMedal2Line } from 'react-icons/ri';
+import { GiCargoShip } from 'react-icons/gi';
+import { BiSupport } from 'react-icons/bi';
+import { GoFlame } from 'react-icons/go';
+import { FaSmile, FaChartLine, FaUsersCog, FaCubes } from 'react-icons/fa';
 import ViewAllItems from '../../Items/AllItems/ViewAllItems/ViewAllItems';
-import atx from '../../../Images/atx-gaming-case-1.png'
-import office from '../../../Images/Office-Block.jpg'
+import atx from '../../../Images/atx-gaming-case-1.png';
 import Reviews from '../../Items/Reviews/Reviews';
+import './Home.css';
 
 const Home = () => {
     return (
@@ -118,7 +117,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='order-1 md:order-2 flex items-center'>
-                        <img src={office} alt="" className='border-8 border-double border-slate-200' />
+                        <img src='https://i.ibb.co/85W9SgM/Office-Block.jpg' alt="" className='border-8 border-double border-slate-200' />
                     </div>
                 </div>
 
@@ -163,8 +162,8 @@ const Home = () => {
 
             {/* Review section */}
             <div className='my-20 mx-6 md:mx-12 lg:mx-20'>
-                <Reviews>4</Reviews>
-                <Link to='/show-all-reviews'><button className='bg-primary text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded block mt-14 mx-auto'>Show All Reviews</button></Link>
+                <h2 className='text-5xl font-extrabold text-primary text-center mb-8'>What People Says About Us!</h2>
+                <Reviews />
             </div>
 
             <Footer />

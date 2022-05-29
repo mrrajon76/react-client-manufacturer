@@ -20,7 +20,6 @@ import Login from './Pages/Users/Login/Login';
 import Register from './Pages/Users/Register/Register';
 import Blogs from './Pages/Blogs/Blogs';
 import RequireAuth from './Pages/Users/RequireAuth/RequireAuth';
-import Reviews from './Pages/Items/Reviews/Reviews';
 
 function App() {
   return (
@@ -30,7 +29,6 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/all-items' element={<AllItems />} />
         <Route path='/all-items:id' element={<ViewSingleItem />} />
-        <Route path='/show-all-reviews' element={<Reviews />} />
         <Route path='/add-item' element={
           <RequireAuth>
             <AddItem />
