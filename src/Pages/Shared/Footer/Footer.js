@@ -5,7 +5,7 @@ import logo from '../../../Images/logo.png'
 
 const Footer = () => {
     return (
-        <div>
+        <div id='footer'>
             <div className='bg-primary py-4 px-3 md:px-10 lg:px-20'>
                 <div className='flex flex-col md:flex-row justify-center items-center'>
                     <div className='md:mr-8'>
