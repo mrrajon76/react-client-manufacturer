@@ -60,6 +60,7 @@ const Home = () => {
             {/* Products section */}
             <div className='mx-6 md:mx-12 lg:mx-20'>
                 <ViewAllItems>6</ViewAllItems>
+                <Link to='/all-items'><button className='bg-primary text-white hover:bg-secondary mt-14 block mx-auto py-3 px-14 uppercase font-semibold rounded'>View All Products</button></Link>
             </div>
 
             {/* Product banners section */}
