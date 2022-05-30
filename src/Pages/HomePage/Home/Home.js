@@ -122,8 +122,8 @@ const Home = () => {
                 </div>
 
                 {/* Stats */}
-                <div class="mt-14 py-4 px-7 md:px-4 lg:px-5 w-full rounded grid md:grid-cols-2 lg:grid-cols-4 bg-gradient-to-r from-green-50 via-cyan-50 to-green-50 shadow-xl shadow-slate-300">
-                    <div class="flex items-center justify-center my-3 lg:my-0">
+                <div className="mt-14 py-4 px-7 md:px-4 lg:px-5 w-full rounded grid md:grid-cols-2 lg:grid-cols-4 bg-gradient-to-r from-green-50 via-cyan-50 to-green-50 shadow-xl shadow-slate-300">
+                    <div className="flex items-center justify-center my-3 lg:my-0">
                         <FaChartLine className='text-6xl text-primary mr-5' />
                         <div>
                             <p className='text-sm'>PC Component has</p>
@@ -132,7 +132,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-center my-3 lg:my-0">
+                    <div className="flex items-center justify-center my-3 lg:my-0">
                         <FaUsersCog className='text-6xl text-primary mr-5' />
                         <div>
                             <p className='text-sm'>We have</p>
@@ -141,7 +141,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-center my-3 lg:my-0">
+                    <div className="flex items-center justify-center my-3 lg:my-0">
                         <FaSmile className='text-6xl text-primary mr-5' />
                         <div>
                             <p className='text-sm'>We have</p>
@@ -149,7 +149,7 @@ const Home = () => {
                             <h5>Happy Customers</h5>
                         </div>
                     </div>
-                    <div class="flex items-center justify-center my-3 lg:my-0">
+                    <div className="flex items-center justify-center my-3 lg:my-0">
                         <FaCubes className='text-6xl text-primary mr-5' />
                         <div>
                             <p className='text-sm'>We have</p>
