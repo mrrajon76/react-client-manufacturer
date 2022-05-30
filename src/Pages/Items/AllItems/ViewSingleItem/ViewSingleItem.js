@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const ViewSingleItem = ({ data }) => {
     const { image, name, desc, price, moq, stock } = data;
     return (
-        <div className='grid md:grid-cols-4 gap-4 lg:gap-10 shadow-lg shadow-slate-300 rounded'>
-            <div className='flex items-center justify-center'>
-                <img src={image} alt="" className='w-5/6 md:w-full lg:w-3/4 p-3' />
+        <div className='grid md:grid-cols-4 gap-4 lg:gap-6 shadow-xl shadow-slate-200 hover:shadow-gray-300 hover:scale-[1.002] transition duration-500 rounded'>
+            <div className='flex items-center justify-center overflow-hidden'>
+                <img src={image} alt="" className='w-5/6 md:w-full lg:w-3/4 p-3 hover:scale-110 transition duration-500 ease-in-out' />
             </div>
             <div className='col-auto md:col-span-3 py-6 px-6 lg:px-8 bg-gradient-to-r from-green-50 to-cyan-100 text-black'>
                 <h3 className='text-2xl font-bold text-primary'>{name}</h3>

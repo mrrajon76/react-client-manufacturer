@@ -8,7 +8,6 @@ import { BiSupport } from 'react-icons/bi';
 import { GoFlame } from 'react-icons/go';
 import { FaSmile, FaChartLine, FaUsersCog, FaCubes } from 'react-icons/fa';
 import ViewAllItems from '../../Items/AllItems/ViewAllItems/ViewAllItems';
-import atx from '../../../Images/atx-gaming-case-1.png';
 import Reviews from '../../Items/Reviews/Reviews';
 import './Home.css';
 
@@ -22,7 +21,7 @@ const Home = () => {
                 <div className='w-full mx-3 md:mx-0 md:w-4/5 lg:w-3/4'>
                     <h1 className='text-5xl md:text-6xl lg:text-7xl font-extrabold'>PC Components</h1>
                     <p className='text-lg md:text-xl lg:text-2xl my-7'>'PC Components' is Bangladesh-based computer parts manufacturer company.<br />We have distributors over 20 countries around the world.</p>
-                    <Link to='/all-items'><button className='bg-primary hover:bg-secondary py-3 px-12 uppercase font-semibold rounded'>Check Our Products</button></Link>
+                    <Link to='/all-items'><button className='bg-primary hover:bg-secondary transition ease-in-out duration-500 hover:scale-110 py-3 px-12 uppercase font-semibold rounded'>Check Our Products</button></Link>
                 </div>
             </div>
 
@@ -60,42 +59,42 @@ const Home = () => {
             {/* Products section */}
             <div className='mx-6 md:mx-12 lg:mx-20'>
                 <ViewAllItems>6</ViewAllItems>
-                <Link to='/all-items'><button className='bg-primary text-white hover:bg-secondary mt-14 block mx-auto py-3 px-14 uppercase font-semibold rounded'>View All Products</button></Link>
+                <Link to='/all-items'><button className='bg-primary transition ease-in-out duration-500 hover:scale-110 text-white hover:bg-secondary mt-14 block mx-auto py-3 px-14 uppercase font-semibold rounded'>View All Products</button></Link>
             </div>
 
             {/* Product banners section */}
             <div className='mx-6 md:mx-12 lg:mx-20 my-20 grid lg:grid-cols-2 gap-10 lg:gap-12 text-white'>
                 <div className='bg-gradient-to-r from-primary via-green-400 to-cyan-500 py-7 px-6 md:px-10 rounded'>
-                    <img src={atx} alt="" className='w-3/4 md:w-7/12' />
+                    <img src='https://i.ibb.co/D8VvFk5/case-4.png' alt="" className='w-3/4 md:w-7/12' />
                     <div>
-                        <h3 className='text-3xl font-bold'>ATX Gaming Case</h3>
-                        <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eos sint voluptates adipisci aliquid. Praesentium ratione sapiente ea possimus architecto!</p>
+                        <h3 className='text-3xl font-bold'>Gigabyte Gaming Case v5</h3>
+                        <p className='my-3'>It has Back Cable Management. Maximum Length of Graphics Card is 300-400mm. Sheet Thickness is 0.5mm. Case materials is ABS with tempered glass & RGB lighting. Transport Package. Case dimension is 360*215*450mm. Origin is China</p>
                         <ul className='text-lg mb-3'>
                             <li className='flex items-center'><GoFlame className='mr-2 text-2xl text-red-400' /> RGB color with controller</li>
                             <li className='flex items-center font-bold'><GoFlame className='mr-2 text-2xl text-red-400' /> 1 RGB 8GB RAM FREE</li>
                             <li className='flex items-center'><GoFlame className='mr-2 text-2xl text-red-400' /> 6 in-build cooler fan</li>
                             <li className='flex items-center'><GoFlame className='mr-2 text-2xl text-red-400' /> Premium tempered glass</li>
                         </ul>
-                        <h4 className='text-2xl font-bold mb-5'>$60 / unit <span className='text-base font-normal ml-4'>MOQ: 200 units</span></h4>
+                        <h4 className='text-2xl font-bold mb-5'>$68 / unit <span className='text-base font-normal ml-4'>MOQ: 450 units</span></h4>
                         <Link to='/'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
                     </div>
                 </div>
                 <div className='grid grid-rows-2 gap-10'>
                     <div className='bg-gradient-to-r from-primary to-cyan-500 py-7 px-6 md:px-5 rounded md:flex items-center'>
-                        <img src={atx} alt="" className='w-3/4 md:w-2/5 md:mr-3' />
+                        <img src='https://i.ibb.co/3cGbsQN/card-2.png' alt="" className='w-3/4 md:w-2/5 md:mr-3' />
                         <div>
-                            <h3 className='text-3xl font-bold'>ATX Gaming Case</h3>
-                            <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eos sint voluptates adipisci aliquid. Praesentium ratione sapiente ea possimus architecto!</p>
-                            <h4 className='text-2xl font-bold mb-5'>$60 / unit <span className='text-base font-normal ml-4'>MOQ: 200 units</span></h4>
+                            <h3 className='text-3xl font-bold'>MSI GeForce RTX 3090 VENTUS</h3>
+                            <p className='my-3'>The award-winning MSI TORX Fan 3.0 design keeps the limits of thermal performance turning. Fan blades alternate between traditional blades and dispersion blades that focus and accelerate airflow into the heatsink.</p>
+                            <h4 className='text-2xl font-bold mb-5'>$330 / unit <span className='text-base font-normal ml-4'>MOQ: 500 units</span></h4>
                             <Link to='/'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
                         </div>
                     </div>
                     <div className='bg-gradient-to-r from-primary to-cyan-500 py-7 px-6 md:px-5 rounded md:flex items-center'>
-                        <img src={atx} alt="" className='w-3/4 md:w-2/5 md:mr-3' />
+                        <img src='https://i.ibb.co/t4XLHRy/power-3.png' alt="" className='w-3/4 md:w-2/5 md:mr-3' />
                         <div>
-                            <h3 className='text-3xl font-bold'>ATX Gaming Case</h3>
-                            <p className='my-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eos sint voluptates adipisci aliquid. Praesentium ratione sapiente ea possimus architecto!</p>
-                            <h4 className='text-2xl font-bold mb-5'>$60 / unit <span className='text-base font-normal ml-4'>MOQ: 200 units</span></h4>
+                            <h3 className='text-3xl font-bold'>Asus ROG Strix 750W</h3>
+                            <p className='my-3'>Asus ROG Strix 750W, Type ATX 12V, PSU Category Full Modular, Series ROG Series, Maximum Power 750Watt, Input AC 100 –240Vac, Input Voltage 100 – 240 V, Over Voltage Protection Yes, Efficiency 80 Plus Gold Certified, Fan Size 135mm</p>
+                            <h4 className='text-2xl font-bold mb-5'>$100 / unit <span className='text-base font-normal ml-4'>MOQ: 300 units</span></h4>
                             <Link to='/'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
                         </div>
                     </div>
@@ -113,7 +112,7 @@ const Home = () => {
                                 <br /><br />
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit reprehenderit repellendus, porro enim ad consequuntur quaerat ex magni esse distinctio veritatis tenetur ducimus et eligendi voluptas consequatur amet numquam sint.
                             </p>
-                            <a href='/#footer'><button className='bg-primary text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Contact Us</button></a>
+                            <a href='/#footer'><button className='bg-primary transition ease-in-out duration-500 hover:scale-110 text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Contact Us</button></a>
 
                         </div>
                     </div>

@@ -6,7 +6,6 @@ import AddAReview from './Pages/Dashboard/AddAReview/AddAReview';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders/ManageAllOrders';
 import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
-import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import Home from './Pages/HomePage/Home/Home';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
@@ -20,6 +19,7 @@ import Login from './Pages/Users/Login/Login';
 import Register from './Pages/Users/Register/Register';
 import Blogs from './Pages/Blogs/Blogs';
 import RequireAuth from './Pages/Users/RequireAuth/RequireAuth';
+import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 
 function App() {
   return (
@@ -43,7 +43,7 @@ function App() {
           <RequireAuth>
             <Dashboard />
           </RequireAuth>}>
-          <Route path='my-profile' element={<MyProfile />} />
+          <Route index element={<MyProfile />} />
           <Route path='my-orders' element={<MyOrders />} />
           <Route path='add-review' element={<AddAReview />} />
           <Route path='manage-orders' element={<ManageAllOrders />} />

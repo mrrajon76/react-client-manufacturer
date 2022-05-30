@@ -7,7 +7,7 @@ const ViewAllItems = ({ children }) => {
     return (
         <div className='space-y-10'>
             {
-                children ? items.slice(0, 6).map(item => <ViewSingleItem data={item} key={item.id}></ViewSingleItem>) : items.map(item => <ViewSingleItem data={item} key={item.id}></ViewSingleItem>)
+                children ? items.slice(0, 6).map(item => <ViewSingleItem data={item} key={item._id}></ViewSingleItem>) : items.map(item => <ViewSingleItem data={item} key={item.id}></ViewSingleItem>)
             }
         </div>
     );
