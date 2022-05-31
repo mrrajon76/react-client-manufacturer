@@ -1,7 +1,9 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 import useUserDetails from '../../../hooks/useUserDetails';
 import Loading from '../../Shared/Loading/Loading';
 
@@ -21,13 +23,21 @@ const AddAReview = () => {
             {
                 method: 'POST',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(formData)
             })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth);
+                    localStorage.removeItem('accessToken');
+                    navigate('/')
+                }
+                return res.json()
+            })
             .then(data => {
-                toast('Thanks for your valuable feedback')
+                toast.success('Thanks for your valuable feedback')
                 navigate('/');
             })
     }

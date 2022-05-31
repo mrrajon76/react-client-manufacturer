@@ -1,17 +1,13 @@
 import { signOut } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
 
-const useUserDetails = () => {
-    const [user] = useAuthState(auth);
+const useAllUsers = () => {
     const navigate = useNavigate();
 
-    const currentUser = user.email;
-
-    const { isLoading, data, refetch } = useQuery(['userDetails', currentUser], () =>
-        fetch(`http://localhost:5000/user/${currentUser}`,
+    const { isLoading, data, refetch } = useQuery(['allUsers'], () =>
+        fetch(`http://localhost:5000/users`,
             {
                 method: 'GET',
                 headers: {
@@ -31,4 +27,4 @@ const useUserDetails = () => {
     return { isLoading, data, refetch };
 };
 
-export default useUserDetails;
+export default useAllUsers;

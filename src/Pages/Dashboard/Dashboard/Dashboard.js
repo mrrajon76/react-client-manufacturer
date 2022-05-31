@@ -29,6 +29,7 @@ const Dashboard = () => {
                             <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard'>My Profile</CustomLinkDash></li>
                             <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/my-orders'>My Orders</CustomLinkDash></li>
                             <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/add-review'>Add a Review</CustomLinkDash></li>
+                            <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/all-users'>All Users</CustomLinkDash></li>
                         </ul>
                     </div>
                 </div>
