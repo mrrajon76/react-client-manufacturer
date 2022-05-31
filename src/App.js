@@ -20,6 +20,7 @@ import Register from './Pages/Users/Register/Register';
 import Blogs from './Pages/Blogs/Blogs';
 import RequireAuth from './Pages/Users/RequireAuth/RequireAuth';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
+import UpdateProfile from './Pages/Dashboard/MyProfile/UpdateProfile/UpdateProfile';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Dashboard />
           </RequireAuth>}>
           <Route index element={<MyProfile />} />
+          <Route path='update-profile' element={<UpdateProfile />} />
           <Route path='my-orders' element={<MyOrders />} />
           <Route path='add-review' element={<AddAReview />} />
           <Route path='manage-orders' element={<ManageAllOrders />} />
