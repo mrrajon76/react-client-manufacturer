@@ -7,6 +7,9 @@ import auth from '../../../firebase.init';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../hooks/useToken';
+import { toast } from 'react-toastify';
+import { signOut } from 'firebase/auth';
 
 const Register = () => {
 
@@ -20,6 +23,8 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, error3] = useUpdateProfile(auth);
 
+    const [token] = useToken(user || user1 || user2);
+
     const navigate = useNavigate();
     let errorMessage;
 
@@ -29,9 +34,11 @@ const Register = () => {
     if (loading || loading1 || loading2 || updating) {
         return <Loading />
     }
-    if (user || user1 || user2) {
-        alert(`Thank you for signing up. Please check your e-mail for the verification link...`);
-        navigate('/');
+    if (token) {
+        toast(`Please check your e-mail for the verification link & then login. Thank you`);
+        signOut(auth);
+        localStorage.removeItem('accessToken');
+        navigate('/login');
     }
 
     const handleRegister = async (event) => {
@@ -39,7 +46,6 @@ const Register = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.pass.value;
-
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
     }

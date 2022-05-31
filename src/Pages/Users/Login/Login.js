@@ -8,6 +8,7 @@ import auth from '../../../firebase.init';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
 
@@ -22,6 +23,7 @@ const Login = () => {
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
 
     const [sendPasswordResetEmail, sending, error3] = useSendPasswordResetEmail(auth);
+    const [token] = useToken(user || user1 || user2);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -34,7 +36,7 @@ const Login = () => {
         return <Loading />
     }
 
-    if (user || user1 || user2) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
