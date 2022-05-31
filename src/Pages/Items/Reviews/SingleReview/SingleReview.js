@@ -5,7 +5,9 @@ import { FaStar } from 'react-icons/fa';
 const SingleReview = ({ data }) => {
     return (
         <div className='p-10 rounded shadow-xl shadow-slate-200 hover:shadow-gray-300 transition duration-500 text-center'>
-            <img src={data.image} alt="" className='w-24 rounded-full block mx-auto' />
+            {
+                data.image ? <img src={data.image} alt="" className='w-24 rounded-full block mx-auto' /> : <img src="https://i.ibb.co/Jd4h8Nf/user.png" alt="" className='w-24 rounded-full block mx-auto' />
+            }
             <h5 className='text-xl my-3 font-bold text-primary'>{data.name}</h5>
             <Rating
                 initialRating={data.ratings}
