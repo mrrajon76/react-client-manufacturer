@@ -22,6 +22,7 @@ import RequireAuth from './Pages/Users/RequireAuth/RequireAuth';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import UpdateProfile from './Pages/Dashboard/MyProfile/UpdateProfile/UpdateProfile';
 import AllUsers from './Pages/Dashboard/AllUsers/AllUsers';
+import RequireAdmin from './Pages/Users/RequireAdmin/RequireAdmin';
 
 function App() {
   return (
@@ -52,7 +53,11 @@ function App() {
           <Route path='manage-orders' element={<ManageAllOrders />} />
           <Route path='manage-items' element={<ManageItems />} />
           <Route path='manage-items:id' element={<SingleItem />} />
-          <Route path='all-users' element={<AllUsers />} />
+          <Route path='all-users' element={
+            <RequireAdmin>
+              <AllUsers />
+            </RequireAdmin>
+          } />
         </Route>
         <Route path='/my-portfolio' element={<MyPortfolio />} />
         <Route path='/login' element={<Login />} />

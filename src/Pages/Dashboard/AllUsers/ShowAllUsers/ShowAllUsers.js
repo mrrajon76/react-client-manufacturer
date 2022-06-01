@@ -18,6 +18,7 @@ const ShowAllUsers = ({ data, refetch }) => {
             })
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
+                    toast.error('You are not authorized to make a user Admin');
                     signOut(auth);
                     localStorage.removeItem('accessToken');
                     navigate('/')
@@ -25,8 +26,10 @@ const ShowAllUsers = ({ data, refetch }) => {
                 return res.json()
             })
             .then(data => {
-                refetch();
-                toast.success(`${name} is now an Admin`)
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast.success(`${name} is now an Admin`)
+                }
             })
     }
 
@@ -41,9 +44,6 @@ const ShowAllUsers = ({ data, refetch }) => {
                 {
                     role === 'admin' ? <span className='text-primary font-bold'>Admin</span> : <button onClick={makeAdmin} className='block mx-auto md:mr-4 md:mx-0 text-white text-sm bg-primary hover:bg-secondary py-1 px-5 font-semibold rounded'>Make Admin</button>
                 }
-            </td>
-            <td className='py-2 pl-5'>
-                <button className='block mx-auto md:mx-0 text-white text-sm bg-red-700 hover:bg-primary py-1 px-5 font-semibold rounded'>Remove</button>
             </td>
         </tr>
     );

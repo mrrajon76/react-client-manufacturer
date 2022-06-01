@@ -4,8 +4,14 @@ import CustomLinkDash from '../../CustomLink/CustomLinkDash';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import { HiMenu } from 'react-icons/hi'
+import useUserStatus from '../../../hooks/useUserStatus';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth);
+    const [admin] = useUserStatus(user);
+
     return (
         <div>
             <Header />
@@ -27,9 +33,21 @@ const Dashboard = () => {
                         <ul className="menu py-6 overflow-y-auto w-80 bg-gray-100 lg:bg-gray-200 text-lg text-black">
                             {/* <!-- Sidebar content here --> */}
                             <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard'>My Profile</CustomLinkDash></li>
-                            <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/my-orders'>My Orders</CustomLinkDash></li>
-                            <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/add-review'>Add a Review</CustomLinkDash></li>
-                            <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/all-users'>All Users</CustomLinkDash></li>
+
+                            {
+                                admin
+                                    ?
+                                    <>
+                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/manage-items'>Manage Items</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/manage-orders'>Manage Orders</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/all-users'>Make an Admin</CustomLinkDash></li>
+                                    </>
+                                    :
+                                    <>
+                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/my-orders'>My Orders</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/add-review'>Add a Review</CustomLinkDash></li>
+                                    </>
+                            }
                         </ul>
                     </div>
                 </div>

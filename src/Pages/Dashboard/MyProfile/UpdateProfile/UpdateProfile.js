@@ -37,8 +37,10 @@ const UpdateProfile = () => {
                 })
                 .then(res => res.json())
                 .then(data => {
-                    toast.success('Profile updated')
-                    navigate('/dashboard');
+                    if (data.result.acknowledged === true) {
+                        toast.success('Profile updated')
+                        navigate('/dashboard');
+                    }
                 })
         }
     }

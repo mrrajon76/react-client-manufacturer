@@ -37,8 +37,10 @@ const AddAReview = () => {
                 return res.json()
             })
             .then(data => {
-                toast.success('Thanks for your valuable feedback')
-                navigate('/');
+                if (data.acknowledged === true) {
+                    toast.success('Thanks for your valuable feedback')
+                    navigate('/');
+                }
             })
     }
 

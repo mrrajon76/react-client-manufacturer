@@ -22,7 +22,6 @@ const AllUsers = () => {
                             <th className='py-2 pl-5'>Name</th>
                             <th className='py-2 pl-5'>Email</th>
                             <th className='py-2 pl-5'>Status</th>
-                            <th className='py-2 pl-5'>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
