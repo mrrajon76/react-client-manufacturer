@@ -8,7 +8,7 @@ function CustomLinkDash({ children, to, ...props }) {
     return (
         <div>
             <Link
-                style={{ fontWeight: match ? "bold" : "400", color: match ? "#51A800" : "#000000", borderBottom: match ? "2px solid #51A800" : "none" }}
+                style={{ fontWeight: match ? "bold" : "400", color: match ? "#51A800" : "#000000", borderBottom: match ? "2px solid #51A800" : "2px solid #E5E7EB" }}
                 to={to} {...props}>
                 {children}
             </Link>

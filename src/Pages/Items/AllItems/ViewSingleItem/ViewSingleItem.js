@@ -13,7 +13,7 @@ const ViewSingleItem = ({ data }) => {
                 <p className='my-4'>{desc}</p>
                 <div className='grid md:grid-cols-2 lg:grid-cols-3 mb-5'>
                     <p className='text-lg font-bold mt-2 md:mt-0'><span className='text-secondary'>Price:</span> ${price} / unit</p>
-                    <p className='text-lg mt-2 md:mt-0'><span className='font-bold text-secondary'>Available Stock:</span> {stock}</p>
+                    <p className='text-lg mt-2 md:mt-0'><span className='font-bold text-secondary'>Available Stock:</span> {stock > 0 ? stock : <span className='text-red-500 font-bold'>Sold Out</span>}</p>
                     <p className='text-lg mt-2 lg:mt-0 md:col-span-2 lg:col-auto'><span className='font-bold text-secondary'>Minimum Order Quantity:</span> {moq}</p>
                 </div>
                 <Link to='/'><button className='bg-primary text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now</button></Link>

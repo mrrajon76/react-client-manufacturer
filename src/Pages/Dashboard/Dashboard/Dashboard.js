@@ -4,13 +4,17 @@ import CustomLinkDash from '../../CustomLink/CustomLinkDash';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import { HiMenu } from 'react-icons/hi'
-import useUserStatus from '../../../hooks/useUserStatus';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
+import useUserDetails from '../../../hooks/useUserDetails';
+import Loading from '../../Shared/Loading/Loading';
 
 const Dashboard = () => {
-    const [user] = useAuthState(auth);
-    const [admin] = useUserStatus(user);
+    const { isLoading, data } = useUserDetails();
+
+    if (isLoading) {
+        return <Loading />;
+    }
+
+    const role = data?.role;
 
     return (
         <div>
@@ -32,21 +36,21 @@ const Dashboard = () => {
                         <label htmlFor="dashboard" className="drawer-overlay"></label>
                         <ul className="menu py-6 overflow-y-auto w-80 bg-gray-100 lg:bg-gray-200 text-lg text-black">
                             {/* <!-- Sidebar content here --> */}
-                            <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard'>My Profile</CustomLinkDash></li>
+                            <li className='lg:bg-gray-200 ml-3 md:ml-5 mr-auto'><CustomLinkDash to='/dashboard' className='w-full pb-1'>My Profile</CustomLinkDash></li>
 
                             {
-                                admin
+                                role === 'admin'
                                     ?
                                     <>
-                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/manage-items'>Manage Items</CustomLinkDash></li>
-                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/add-item'>Add a New Item</CustomLinkDash></li>
-                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/manage-orders'>Manage Orders</CustomLinkDash></li>
-                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/all-users'>Make an Admin</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 ml-3 md:ml-5 mr-auto'><CustomLinkDash to='/dashboard/manage-items' className='w-full pb-1'>Manage Items</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 ml-3 md:ml-5 mr-auto'><CustomLinkDash to='/dashboard/add-item' className='w-full pb-1'>Add a New Item</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 ml-3 md:ml-5 mr-auto'><CustomLinkDash to='/dashboard/manage-orders' className='w-full pb-1'>Manage Orders</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 ml-3 md:ml-5 mr-auto'><CustomLinkDash to='/dashboard/all-users' className='w-full pb-1'>Make an Admin</CustomLinkDash></li>
                                     </>
                                     :
                                     <>
-                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/my-orders'>My Orders</CustomLinkDash></li>
-                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/add-review'>Add a Review</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 ml-3 md:ml-5 mr-auto'><CustomLinkDash to='/dashboard/my-orders' className='w-full pb-1'>My Orders</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 ml-3 md:ml-5 mr-auto'><CustomLinkDash to='/dashboard/add-review' className='w-full pb-1'>Add a Review</CustomLinkDash></li>
                                     </>
                             }
                         </ul>

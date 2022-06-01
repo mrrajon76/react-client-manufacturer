@@ -30,10 +30,12 @@ const AddItem = () => {
                 return res.json()
             })
             .then(data => {
-                console.log(data);
                 if (data.acknowledged === true) {
                     toast.success('Item added successfully');
-                    navigate('/')
+                    navigate('/dashboard/manage-items')
+                }
+                else {
+                    toast.error('Something is wrong!');
                 }
             })
     }

@@ -11,14 +11,14 @@ const AllUsers = () => {
     }
 
     return (
-        <div className='mx-6 md:mx-10 my-6 md:my-10 lg:m-0'>
+        <div className='mx-2 md:mx-10 my-6 md:my-10 lg:m-0'>
             <h1 className='text-3xl md:text-4xl text-center lg:text-left font-extrabold text-primary'>All Users</h1>
 
             <div className='mt-8'>
                 <table className='my-5 table-auto w-full text-left'>
                     <thead className=''>
                         <tr className='bg-gradient-to-r from-green-300 to-sky-300'>
-                            <th className='py-2 pl-5'>Image</th>
+                            <th className='py-2 pl-5 hidden md:block'>Image</th>
                             <th className='py-2 pl-5'>Name</th>
                             <th className='py-2 pl-5'>Email</th>
                             <th className='py-2 pl-5'>Status</th>

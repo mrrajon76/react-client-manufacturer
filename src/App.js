@@ -45,9 +45,21 @@ function App() {
           <Route path='update-profile' element={<UpdateProfile />} />
           <Route path='my-orders' element={<MyOrders />} />
           <Route path='add-review' element={<AddAReview />} />
-          <Route path='manage-orders' element={<ManageAllOrders />} />
-          <Route path='manage-items' element={<ManageItems />} />
-          <Route path='manage-items:id' element={<SingleItem />} />
+          <Route path='manage-orders' element={
+            <RequireAdmin>
+              <ManageAllOrders />
+            </RequireAdmin>
+          } />
+          <Route path='manage-items' element={
+            <RequireAdmin>
+              <ManageItems />
+            </RequireAdmin>
+          } />
+          <Route path='manage-items/:id' element={
+            <RequireAdmin>
+              <SingleItem />
+            </RequireAdmin>
+          } />
           <Route path='all-users' element={
             <RequireAdmin>
               <AllUsers />

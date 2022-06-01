@@ -35,14 +35,14 @@ const ShowAllUsers = ({ data, refetch }) => {
 
     return (
         <tr className='border-b'>
-            <td className='py-2 pl-5'>
-                {image ? <img src={image} alt="" /> : <img src='https://i.ibb.co/Jd4h8Nf/user.png' alt="" className='w-9 p-1 border rounded-full' />}
+            <td className='py-2 pl-5 hidden md:block'>
+                {image ? <img src={image} alt="" className='w-9 p-1 border rounded-full' /> : <img src='https://i.ibb.co/Jd4h8Nf/user.png' alt="" className='w-9 p-1 border rounded-full' />}
             </td>
             <td className='py-2 pl-5'>{name}</td>
             <td className='py-2 pl-5'>{email}</td>
             <td className='py-2 pl-5'>
                 {
-                    role === 'admin' ? <span className='text-primary font-bold'>Admin</span> : <button onClick={makeAdmin} className='block mx-auto md:mr-4 md:mx-0 text-white text-sm bg-primary hover:bg-secondary py-1 px-5 font-semibold rounded'>Make Admin</button>
+                    role === 'admin' ? <span className='text-primary font-bold'>Admin</span> : <button onClick={makeAdmin} className='text-white text-sm bg-primary hover:bg-secondary py-1 px-3 md:px-5 font-semibold rounded'>Make Admin</button>
                 }
             </td>
         </tr>
