@@ -1,6 +1,6 @@
 import React from 'react';
 import swal from 'sweetalert';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useItems from '../../../../hooks/useItems';
 import Loading from '../../../Shared/Loading/Loading';
 import { signOut } from 'firebase/auth';
@@ -18,6 +18,50 @@ const SingleItem = () => {
     const item = data?.find(i => i._id === id);
     const { _id, image, name, desc, price, stock, moq, sold } = item;
 
+    // Update stock
+    const updateStock = () => {
+        swal("Input new stock quantity:", {
+            content: "input",
+        })
+            .then((value) => {
+                if (value > 0) {
+                    const newStock = { value: stock + parseInt(value) };
+
+                    fetch(`http://localhost:5000/product/${_id}`,
+                        {
+                            method: 'PATCH',
+                            headers: {
+                                'content-type': 'application/json',
+                                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                            },
+                            body: JSON.stringify(newStock)
+                        })
+                        .then(res => {
+                            if (res.status === 401 || res.status === 403) {
+                                signOut(auth);
+                                localStorage.removeItem('accessToken');
+                                navigate('/')
+                            }
+                            return res.json()
+                        })
+                        .then(updateResult => {
+                            if (updateResult.acknowledged === true) {
+                                swal(`${value} Stock Quantity is added`, {
+                                    icon: "success"
+                                });
+                                refetch();
+                            }
+                        })
+                }
+                else {
+                    swal('Please input a valid positive number', {
+                        icon: "error"
+                    });
+                }
+            });
+    }
+
+    // Delete item
     const deleteItem = async () => {
         swal({
             title: "Are you sure?",
@@ -101,7 +145,7 @@ const SingleItem = () => {
                     </tbody>
                 </table>
                 <div className='mt-5 flex space-x-5'>
-                    <Link to='/'><button className='bg-primary text-white hover:bg-secondary py-2 px-6 uppercase font-semibold rounded'>Add Stock</button></Link>
+                    <button onClick={updateStock} className='bg-primary text-white hover:bg-secondary py-2 px-6 uppercase font-semibold rounded'>Add Stock</button>
                     <button onClick={deleteItem} className='bg-red-500 text-white hover:bg-secondary py-2 px-6 uppercase font-semibold rounded'>Delete</button>
                 </div>
             </div>
