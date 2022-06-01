@@ -32,11 +32,6 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/all-items' element={<AllItems />} />
         <Route path='/all-items:id' element={<ViewSingleItem />} />
-        <Route path='/add-item' element={
-          <RequireAuth>
-            <AddItem />
-          </RequireAuth>
-        } />
         <Route path='/purchase' element={
           <RequireAuth>
             <Purchase />
@@ -56,6 +51,11 @@ function App() {
           <Route path='all-users' element={
             <RequireAdmin>
               <AllUsers />
+            </RequireAdmin>
+          } />
+          <Route path='add-item' element={
+            <RequireAdmin>
+              <AddItem />
             </RequireAdmin>
           } />
         </Route>

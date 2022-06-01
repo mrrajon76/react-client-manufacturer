@@ -1,66 +1,5 @@
 [
   {
-    "id": "6294c9f2299182b0f0e76e21",
-    "image": "https://i.ibb.co/gWZbTPY/atx-power-1.png",
-    "name": "ATX Power Supply 12V 2000W",
-    "desc": "Usage for industrial server Desktop. It has CE, RoHS, CCC, FCC Certification. The Power will be greater than 800W. ATX 12V 2.31. Fan type is 14cm & Fan size is almost 8 inches.",
-    "price": 73,
-    "stock": 1582,
-    "moq": 500,
-    "sold": 3473
-  },
-  {
-    "id": "6294c9f24b9634d8541ca558",
-    "image": "https://i.ibb.co/9N8sKwg/case-2.png",
-    "name": "K-Mex Gamer Micro Ranger Case",
-    "desc": "HD Audio, Full glass side plates, Acrylic panel, Folded inner edges. Manual fixing screw, Galvanized steel frame, Magnetic top and bottom dust filter and Compatible with 120mm rear water cooler",
-    "price": 56,
-    "stock": 2586,
-    "moq": 750,
-    "sold": 1004
-  },
-  {
-    "id": "6294c9f2cce497c40d4b5908",
-    "image": "https://i.ibb.co/Nsn06pn/board-1.png",
-    "name": "Motherboard Gigabyte H410M H V3",
-    "desc": "Intel Ultra Durable Motherboard with Gigabyte Gaming GbE LAN, Anti-Sulfur Resistor, Smart Fan 5 FEATURES Compatible with 10th Gen Intel Core Processors Dual Channel Non-ECC Unbuffered DDR4, 2 DIMMs 8-channel. HD Audio with high-quality audio capacitors. NVMe PCIe Gen3 x4 2280 M.2 ",
-    "price": 156,
-    "stock": 1855,
-    "moq": 600,
-    "sold": 1574
-  },
-  {
-    "id": "6294c9f222d35fdf5dbbf7be",
-    "image": "https://i.ibb.co/vL3hg4R/ram-1.png",
-    "name": "Corsair Dominator Platinum RGB 8GB DDR4 3600MHz",
-    "desc": "Capacity 8GB, RAM Type DDR4. Bus Speed 36000MHz. CAS Latency 18-19-19-39. Number of Pin 288 Pin. Memory Color Black, LED Lighting RGB, Single Zone / Multi-Zone Lighting Individually Addressable, Compatibility with Intel 100 Series, Intel 200 Series, Intel 300 Series.",
-    "price": 80,
-    "stock": 1524,
-    "moq": 300,
-    "sold": 2659
-  },
-  {
-    "id": "6294c9f2615a6cecbdf865f6",
-    "image": "https://i.ibb.co/kXXkQQk/card-1.png",
-    "name": "Nvidia GT730 4GB DDR3 128-bit ",
-    "desc": "NVIDIA Geforce GT730. Video Memory is 4GB DDR3, Memory Bus 128-Bit, Memory Clock 1333MHz. PCI Express 2. Display Outputs are 1 x HDMI, 1 x DVI, 1 x VGA. Resolution 2048 x 1536 D-sub Resolution & 3840 x 2160 Digital Resolution.",
-    "price": 295,
-    "stock": 2123,
-    "moq": 400,
-    "sold": 1956
-  },
-  {
-    "id": "6294c9f2e65e495769787f66",
-    "image": "https://i.ibb.co/LzydNVQ/fan-1.jpg",
-    "name": "240mm Liquid Cooling Fan",
-    "desc": "Type of cooling is WATER COOLING. Heatsink Material is plastic. Fan Life 30000 Hrs. Need power supply of 3W. Fan Size is 120*120*25mm. Fan Speed Control is 2600RPM. Fan Speed will be 1000~1800.",
-    "price": 33,
-    "stock": 2366,
-    "moq": 250,
-    "sold": 2178
-  },
-  {
-    "id": "6294c9f26077feb71372d3b8",
     "image": "https://i.ibb.co/5r75DCx/case-1.png",
     "name": "ATX Middle Tower PC Gaming Case",
     "desc": "It has Back Cable Management. Maximum Length of Graphics Card is 300-400mm. Sheet Thickness is 0.5mm. Case materials is ABS with tempered glass & RGB lighting. Transport Package. Case dimension is 360*215*450mm. Origin is China",
@@ -70,7 +9,6 @@
     "sold": 894
   },
   {
-    "id": "6294c9f2f58884e416b836e1",
     "image": "https://i.ibb.co/YcCJKNQ/atx-power-2.png",
     "name": "Mining Server PC Power Supply 1600W",
     "desc": "Usage for mining server Desktop. It has CE, RoHS, CCC, FCC Certification. The Power will be greater than 800W. ATX 12V 2.31. Fan type is 14cm & Fan size is almost 8 inches.",
@@ -80,7 +18,6 @@
     "sold": 659
   },
   {
-    "id": "6294c9f25d80719da9e18795",
     "image": "https://i.ibb.co/1vTfgS5/board-2.png",
     "name": "Motherboard Afox H61 Intel H61 Chipset",
     "desc": "This motherboard supports DDR3 memory which features data transfer rates of 1333 (OC) / 1066/800 MHz, providing excellent performance for 3D graphics and other memory demanding applications. The Intel® H61 Express Chipset is the latest single chipset design to support the new 10th generation Intel® processors",
@@ -90,7 +27,6 @@
     "sold": 1943
   },
   {
-    "id": "6294c9f29ccf50f6d5293401",
     "image": "https://i.ibb.co/3cGbsQN/card-2.png",
     "name": "MSI GeForce RTX 3090 VENTUS",
     "desc": "The award-winning MSI TORX Fan 3.0 design keeps the limits of thermal performance turning. Fan blades alternate between traditional blades and dispersion blades that focus and accelerate airflow into the heatsink.",
@@ -100,7 +36,6 @@
     "sold": 3127
   },
   {
-    "id": "6294c9f2111edc0af123794d",
     "image": "https://i.ibb.co/4WwjxHg/board-3.png",
     "name": "Asrock B550 Phantom Gaming 4 AMD Motherboard",
     "desc": "Brand ASRock, Model ASRock B550 Phantom. Chipset Brand AMD, Chipset AMD B550, CPU Sockets AM4, Supported CPU Ryzen 3000, 4000 G-Series and 5000 Series Processors, Memory Type DDR4, Memory MHz AMD Ryzen series CPUs",
@@ -110,7 +45,6 @@
     "sold": 1312
   },
   {
-    "id": "6294c9f2f716da0eb505a134",
     "image": "https://i.ibb.co/xh2c9jJ/fan-2.png",
     "name": "AITC Kingsman KM1232 Case Fan",
     "desc": "Fan Speed 1200RPM. Rated Current 0.26-0.48A. RATED POWER 3.12-5.76W, Air Flow 55CFM, MTBF 40000hrs. Rated Voltage DC 12V. Wire length 450mm, Connector 6 Pin, Dimension 120 x 120 x 25mm. ARGB Fan 3, Remote controller",
@@ -120,7 +54,6 @@
     "sold": 955
   },
   {
-    "id": "6294c9f2f9828fc1879f4152",
     "image": "https://i.ibb.co/F4mgZ6Q/ram-2.png",
     "name": "PNY XLR8 Gaming EPIC-X RGB 8GB DDR4",
     "desc": "PNY XLR8 Gaming EPIC-X RGB Desktop RAM comes with 8GB DDR4 3200MHz capacity. This RAM offers a brilliant RGB design combined with extreme overclocked performance, taking your PC to the extreme. The PNY’s premium XLR8 modules combine top-tier components and select ICs for aggressive speed",
@@ -130,7 +63,6 @@
     "sold": 757
   },
   {
-    "id": "6294c9f23d5ca0d7fa99f972",
     "image": "https://i.ibb.co/9hk2Zkb/board-4.png",
     "name": "Asrock B450 AMD Gaming Motherboard",
     "desc": "Supports AMD AM4 Socket Ryzen™ 2000, 3000, 4000 G-Series, 5000 and 5000 G-Series Desktop Processors. Supports DDR4 3200+ (OC). 2 PCIe 3.0 x16, 4 PCIe 2.0 x1. AMD Quad CrossFireX™. Graphics Output HDMI, Display Port, D-Sub. 7.1 CH HD Audio (Realtek ALC892 Audio Codec), ELNA Audio Caps",
@@ -140,7 +72,6 @@
     "sold": 1111
   },
   {
-    "id": "6294c9f26f6ea8cac4fe07c1",
     "image": "https://i.ibb.co/D8VvFk5/case-4.png",
     "name": "Gigabyte Gaming Case v5",
     "desc": "It has Back Cable Management. Maximum Length of Graphics Card is 300-400mm. Sheet Thickness is 0.5mm. Case materials is ABS with tempered glass & RGB lighting. Transport Package. Case dimension is 360*215*450mm. Origin is China",
@@ -150,7 +81,6 @@
     "sold": 2545
   },
   {
-    "id": "6294c9f2db9a101a95ab114a",
     "image": "https://i.ibb.co/qRvYb6F/case-5.jpg",
     "name": "DIY Open Computer Case",
     "desc": "The power supply is down. The model number is 000530. The compatible board is atxstandard. The structurer is micro atx/atx. The type of computer case is desktop. ATX Power Supply, support other turn on mode. USB3.0*1 Interface, faster & safer. Support DIY, with HDD*1 & SSD*1",
@@ -160,7 +90,6 @@
     "sold": 1595
   },
   {
-    "id": "6294c9f28b014525935d3aba",
     "image": "https://i.ibb.co/3sDBtz2/case-3.jpg",
     "name": "ATX Gaming Case v6",
     "desc": "Steel plate thickness 0.5MM, Material of Left plate tempered glass, Right plate steel, Front panel with streamer strip. Top interface Audio,USB3.0*1 USB2.0*2. Fan position Top 120MM*2, Front 120MM*2, Back 120MM*1. Power supply position on the bottle. Case size L380*W180*H435MM",
@@ -170,7 +99,6 @@
     "sold": 2061
   },
   {
-    "id": "6294c9f294239176629b5002",
     "image": "https://i.ibb.co/t4XLHRy/power-3.png",
     "name": "Asus ROG Strix 750W",
     "desc": "Asus ROG Strix 750W, Type ATX 12V, PSU Category Full Modular, Series ROG Series, Maximum Power 750Watt, Input AC 100 –240Vac, Input Voltage 100 – 240 V, Over Voltage Protection Yes, Efficiency 80 Plus Gold Certified, Fan Size 135mm",
@@ -180,7 +108,6 @@
     "sold": 2071
   },
   {
-    "id": "6294c9f283c82d458a3f3828",
     "image": "https://i.ibb.co/njKtk1W/ssd-2.png",
     "name": "AITC Kingsman KM600 256GB M.2",
     "desc": "AITC KINGSMAN KM600 SSD comes with 256GB M.2 NVMe PCIe capacity. Its Fast and continuous 2500MB/s (Max.) read speed/ 1800MB/s (Max.) write speeds help you improve working efficiency, gaming experience and graphics quality.",
@@ -190,7 +117,6 @@
     "sold": 2937
   },
   {
-    "id": "6294c9f26fade08c1643d1b9",
     "image": "https://i.ibb.co/zGMfqCG/ssd-1.jpg",
     "name": "Adata Ultimate SU650 120GB M.2",
     "desc": "The ADATA Ultimate SU650 M.2 2280 SSD features 3D NAND Flash, a high-speed controller, and up to 480GB capacity. It delivers read/write performance of up to 550/510MB/s and greater reliability than 2D NAND SSDs.",
@@ -198,5 +124,59 @@
     "stock": 2200,
     "moq": 650,
     "sold": 3323
+  },
+  {
+    "image": "https://i.ibb.co/gWZbTPY/atx-power-1.png",
+    "name": "ATX Power Supply 12V 2000W",
+    "desc": "Usage for industrial server Desktop. It has CE, RoHS, CCC, FCC Certification. The Power will be greater than 800W. ATX 12V 2.31. Fan type is 14cm & Fan size is almost 8 inches.",
+    "price": 73,
+    "stock": 1582,
+    "moq": 500,
+    "sold": 3473
+  },
+  {
+    "image": "https://i.ibb.co/9N8sKwg/case-2.png",
+    "name": "K-Mex Gamer Micro Ranger Case",
+    "desc": "HD Audio, Full glass side plates, Acrylic panel, Folded inner edges. Manual fixing screw, Galvanized steel frame, Magnetic top and bottom dust filter and Compatible with 120mm rear water cooler",
+    "price": 56,
+    "stock": 2586,
+    "moq": 750,
+    "sold": 1004
+  },
+  {
+    "image": "https://i.ibb.co/Nsn06pn/board-1.png",
+    "name": "Motherboard Gigabyte H410M H V3",
+    "desc": "Intel Ultra Durable Motherboard with Gigabyte Gaming GbE LAN, Anti-Sulfur Resistor, Smart Fan 5 FEATURES Compatible with 10th Gen Intel Core Processors Dual Channel Non-ECC Unbuffered DDR4, 2 DIMMs 8-channel. HD Audio with high-quality audio capacitors. NVMe PCIe Gen3 x4 2280 M.2 ",
+    "price": 156,
+    "stock": 1855,
+    "moq": 600,
+    "sold": 1574
+  },
+  {
+    "image": "https://i.ibb.co/vL3hg4R/ram-1.png",
+    "name": "Corsair Dominator Platinum RGB 8GB DDR4 3600MHz",
+    "desc": "Capacity 8GB, RAM Type DDR4. Bus Speed 36000MHz. CAS Latency 18-19-19-39. Number of Pin 288 Pin. Memory Color Black, LED Lighting RGB, Single Zone / Multi-Zone Lighting Individually Addressable, Compatibility with Intel 100 Series, Intel 200 Series, Intel 300 Series.",
+    "price": 80,
+    "stock": 1524,
+    "moq": 300,
+    "sold": 2659
+  },
+  {
+    "image": "https://i.ibb.co/kXXkQQk/card-1.png",
+    "name": "Nvidia GT730 4GB DDR3 128-bit ",
+    "desc": "NVIDIA Geforce GT730. Video Memory is 4GB DDR3, Memory Bus 128-Bit, Memory Clock 1333MHz. PCI Express 2. Display Outputs are 1 x HDMI, 1 x DVI, 1 x VGA. Resolution 2048 x 1536 D-sub Resolution & 3840 x 2160 Digital Resolution.",
+    "price": 295,
+    "stock": 2123,
+    "moq": 400,
+    "sold": 1956
+  },
+  {
+    "image": "https://i.ibb.co/LzydNVQ/fan-1.jpg",
+    "name": "240mm Liquid Cooling Fan",
+    "desc": "Type of cooling is WATER COOLING. Heatsink Material is plastic. Fan Life 30000 Hrs. Need power supply of 3W. Fan Size is 120*120*25mm. Fan Speed Control is 2600RPM. Fan Speed will be 1000~1800.",
+    "price": 33,
+    "stock": 2366,
+    "moq": 250,
+    "sold": 2178
   }
 ]

@@ -39,6 +39,7 @@ const Dashboard = () => {
                                     ?
                                     <>
                                         <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/manage-items'>Manage Items</CustomLinkDash></li>
+                                        <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/add-item'>Add a New Item</CustomLinkDash></li>
                                         <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/manage-orders'>Manage Orders</CustomLinkDash></li>
                                         <li className='lg:bg-gray-200 px-3'><CustomLinkDash to='/dashboard/all-users'>Make an Admin</CustomLinkDash></li>
                                     </>
