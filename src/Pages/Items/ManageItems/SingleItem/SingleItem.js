@@ -140,7 +140,7 @@ const SingleItem = () => {
                         </tr>
                         <tr className='border'>
                             <th className='text-primary text-lg py-2 px-3 border-r bg-gray-50'>Sold Item</th>
-                            <td className='py-2 px-3 font-bold'>{sold}</td>
+                            <td className='py-2 px-3 font-bold'>{sold ? sold : '0'}</td>
                         </tr>
                     </tbody>
                 </table>

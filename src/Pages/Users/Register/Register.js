@@ -1,4 +1,5 @@
 import React from 'react';
+import swal from 'sweetalert';
 import { useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
@@ -8,7 +9,6 @@ import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Loading from '../../Shared/Loading/Loading';
 import useToken from '../../../hooks/useToken';
-import { toast } from 'react-toastify';
 import { signOut } from 'firebase/auth';
 
 const Register = () => {
@@ -35,7 +35,9 @@ const Register = () => {
         return <Loading />
     }
     if (token) {
-        toast(`Please check your e-mail for the verification link & then login. Thank you`);
+        swal('Thank you for joining us. Please check your email for verification link and then login again.', {
+            icon: "warning"
+        });
         signOut(auth);
         localStorage.removeItem('accessToken');
         navigate('/login');

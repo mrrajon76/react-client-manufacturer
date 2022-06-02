@@ -11,6 +11,10 @@ const AddItem = () => {
 
     const onSubmit = formData => {
 
+        formData.price = parseFloat(formData.price);
+        formData.stock = parseInt(formData.stock);
+        formData.moq = parseInt(formData.moq);
+
         fetch('http://localhost:5000/product',
             {
                 method: 'POST',

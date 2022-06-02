@@ -11,7 +11,6 @@ import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
 import AddItem from './Pages/Items/AddItem/AddItem';
 import AllItems from './Pages/Items/AllItems/AllItems';
-import ViewSingleItem from './Pages/Items/AllItems/ViewSingleItem/ViewSingleItem';
 import ManageItems from './Pages/Items/ManageItems/ManageItems';
 import SingleItem from './Pages/Items/ManageItems/SingleItem/SingleItem';
 import Purchase from './Pages/Items/Purchase/Purchase';
@@ -31,8 +30,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/all-items' element={<AllItems />} />
-        <Route path='/all-items:id' element={<ViewSingleItem />} />
-        <Route path='/purchase' element={
+        <Route path='/purchase/:id' element={
           <RequireAuth>
             <Purchase />
           </RequireAuth>

@@ -76,7 +76,7 @@ const Home = () => {
                             <li className='flex items-center'><GoFlame className='mr-2 text-2xl text-red-400' /> Premium tempered glass</li>
                         </ul>
                         <h4 className='text-2xl font-bold mb-5'>$68 / unit <span className='text-base font-normal ml-4'>MOQ: 450 units</span></h4>
-                        <Link to='/'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
+                        <Link to='/purchase/6296d602426c473a6c8e8a6e'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
                     </div>
                 </div>
                 <div className='grid grid-rows-2 gap-10'>
@@ -86,7 +86,7 @@ const Home = () => {
                             <h3 className='text-3xl font-bold'>MSI GeForce RTX 3090 VENTUS</h3>
                             <p className='my-3'>The award-winning MSI TORX Fan 3.0 design keeps the limits of thermal performance turning. Fan blades alternate between traditional blades and dispersion blades that focus and accelerate airflow into the heatsink.</p>
                             <h4 className='text-2xl font-bold mb-5'>$330 / unit <span className='text-base font-normal ml-4'>MOQ: 500 units</span></h4>
-                            <Link to='/'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
+                            <Link to='/purchase/6296d602426c473a6c8e8a69'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
                         </div>
                     </div>
                     <div className='bg-gradient-to-r from-primary to-cyan-500 py-7 px-6 md:px-5 rounded md:flex items-center'>
@@ -95,7 +95,7 @@ const Home = () => {
                             <h3 className='text-3xl font-bold'>Asus ROG Strix 750W</h3>
                             <p className='my-3'>Asus ROG Strix 750W, Type ATX 12V, PSU Category Full Modular, Series ROG Series, Maximum Power 750Watt, Input AC 100 –240Vac, Input Voltage 100 – 240 V, Over Voltage Protection Yes, Efficiency 80 Plus Gold Certified, Fan Size 135mm</p>
                             <h4 className='text-2xl font-bold mb-5'>$100 / unit <span className='text-base font-normal ml-4'>MOQ: 300 units</span></h4>
-                            <Link to='/'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
+                            <Link to='/purchase/6296d602426c473a6c8e8a71'><button className='bg-white text-primary hover:text-white hover:bg-secondary py-2 px-10 uppercase font-semibold rounded'>Purchase Now!</button></Link>
                         </div>
                     </div>
                 </div>
