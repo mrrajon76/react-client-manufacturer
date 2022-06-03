@@ -49,7 +49,7 @@ const Footer = () => {
                         <h5 className='text-xl md:text-left text-center font-bold text-primary mb-4'>Popular Products</h5>
                         <ul className='nav space-y-3 md:text-left text-center font-semibold'>
                             {
-                                popularItems?.slice(0, 4).map(item => <li className='hover:text-primary'><Link to={`/purchase/${item._id}`}>{item.name}</Link></li>)
+                                popularItems?.slice(0, 4).map((item, index) => <li key={index} className='hover:text-primary'><Link to={`/purchase/${item._id}`}>{item.name}</Link></li>)
                             }
                         </ul>
                     </div>

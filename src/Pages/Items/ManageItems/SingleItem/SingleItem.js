@@ -103,7 +103,7 @@ const SingleItem = () => {
     return (
         <div className='mx-4 md:mx-10 my-6 md:my-10 lg:m-0'>
             <h1 className='text-3xl md:text-4xl text-center lg:text-left font-extrabold text-primary'>Manage Item</h1>
-            <h1 className='mt-2 text-lg md:text-2xl text-center lg:text-left'>{name}</h1>
+            <h3 className='mt-2 text-lg md:text-2xl text-center lg:text-left'>{name}</h3>
 
             <div className='mt-8 mb-4 mx-auto lg:mx-0 w-full'>
                 <table className='table-auto w-full text-left'>
