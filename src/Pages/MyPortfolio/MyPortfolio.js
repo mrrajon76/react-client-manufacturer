@@ -74,7 +74,7 @@ const MyPortfolio = () => {
                                             </li>
                                         </ul>
 
-                                        <ul className='list-disc list-inside mt-3'>
+                                        <ul className='list-disc list-inside mt-5'>
                                             <li className='text-sm'>
                                                 <span className='font-bold text-lg'>Independent Service Provider (Accountant)</span> &nbsp; React JS - Tailwind CSS - Firebase
 
@@ -91,7 +91,7 @@ const MyPortfolio = () => {
                                             </li>
                                         </ul>
 
-                                        <ul className='list-disc list-inside mt-3'>
+                                        <ul className='list-disc list-inside mt-5'>
                                             <li className='text-sm'>
                                                 <span className='font-bold text-lg'>Product Analysis (MacBook Pro)</span> &nbsp; React JS - Tailwind CSS
 

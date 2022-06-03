@@ -10,6 +10,7 @@ import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Loading from '../../Shared/Loading/Loading';
 import useUserDetails from '../../../hooks/useUserDetails';
+import { signOut } from 'firebase/auth';
 
 const Purchase = () => {
     const [user] = useAuthState(auth);
@@ -38,9 +39,45 @@ const Purchase = () => {
     const { _id, image, name, desc, price, stock, moq, sold } = item;
 
     const onSubmit = formData => {
-        formData.name = userDetails.name;
-        formData.email = userDetails.email;
-        console.log(formData);
+        formData.productID = _id;
+        formData.customerName = userDetails.name;
+        formData.customerEmail = userDetails.email;
+        formData.price = formData.quantity * price;
+        formData.status = 'Pending';
+        formData.paymentStatus = 'Unpaid';
+
+        const newStock = parseInt(stock) - formData.quantity;
+        const newSold = parseInt(sold) + parseInt(formData.quantity);
+        const orderDetails = { formData, newStock, newSold };
+
+        if (formData) {
+            fetch(`http://localhost:5000/order`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(orderDetails)
+                })
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/')
+                    }
+                    return res.json()
+                })
+                .then(orderResult => {
+                    if (orderResult.addOrder.acknowledged === true && orderResult.updateProduct.acknowledged) {
+                        swal('Order Confirmed', {
+                            icon: "success"
+                        });
+                        refetch();
+                    }
+                })
+        }
+
     }
 
     return (
@@ -99,54 +136,54 @@ const Purchase = () => {
                             <div className="relative z-0 mb-6 w-full group">
                                 <input type="text" value={userDetails?.name}
                                     disabled
-                                    name="name"
+                                    name="customerName"
                                     className="block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-slate-400 appearance-none focus:outline-none focus:ring-0 focus:border-indigo-900 peer"
-                                    {...register("name")}
+                                    {...register("customerName")}
                                     placeholder=" " />
-                                <label htmlFor="name" className="absolute  text-gray-900 dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-900 peer-focus:dark:text-indigo-900ss peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Customer Name</label>
+                                <label htmlFor="customerName" className="absolute  text-gray-900 dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-900 peer-focus:dark:text-indigo-900ss peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Customer Name</label>
                             </div>
 
                             {/* Email field */}
                             <div className="relative z-0 mb-6 w-full group">
                                 <input type="email" value={userDetails?.email}
                                     disabled
-                                    name="email"
+                                    name="customerEmail"
                                     className="block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-slate-400 appearance-none focus:outline-none focus:ring-0 focus:border-indigo-900 peer"
-                                    {...register("email")}
+                                    {...register("customerEmail")}
                                     placeholder=" " />
-                                <label htmlFor="email" className="absolute  text-gray-900 dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-900 peer-focus:dark:text-indigo-900ss peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Customer Email</label>
+                                <label htmlFor="customerEmail" className="absolute  text-gray-900 dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-900 peer-focus:dark:text-indigo-900ss peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Customer Email</label>
                             </div>
 
                             {/* Phone field */}
                             <div className="relative z-0 mb-6 w-full group">
                                 <input type="number" defaultValue={userDetails?.phone}
-                                    name="phone"
+                                    name="customerPhone"
                                     className="block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-slate-400 appearance-none focus:outline-none focus:ring-0 focus:border-indigo-900 peer"
-                                    {...register("phone", {
+                                    {...register("customerPhone", {
                                         required: {
                                             value: true,
                                             message: 'Phone number is required'
                                         }
                                     })}
                                     placeholder=" " />
-                                <label htmlFor="phone" className="absolute  text-gray-900 dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-900 peer-focus:dark:text-indigo-900ss peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Customer Phone No.</label>
-                                {errors.phone?.type === 'required' && <span className='text-red-600'>{errors.phone.message}</span>}
+                                <label htmlFor="customerPhone" className="absolute  text-gray-900 dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-900 peer-focus:dark:text-indigo-900ss peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Customer Phone No.</label>
+                                {errors.customerPhone?.type === 'required' && <span className='text-red-600'>{errors.customerPhone.message}</span>}
                             </div>
 
                             {/* Address field */}
                             <div className="relative z-0 mb-6 w-full group">
                                 <input type="text" defaultValue={userDetails?.address}
-                                    name="address"
+                                    name="customerAddress"
                                     className="block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-slate-400 appearance-none focus:outline-none focus:ring-0 focus:border-indigo-900 peer"
-                                    {...register("address", {
+                                    {...register("customerAddress", {
                                         required: {
                                             value: true,
                                             message: 'Shipping address is required'
                                         }
                                     })}
                                     placeholder=" " />
-                                <label htmlFor="address" className="absolute  text-gray-900 dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-900 peer-focus:dark:text-indigo-900ss peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Shipping Address</label>
-                                {errors.address?.type === 'required' && <span className='text-red-600'>{errors.address.message}</span>}
+                                <label htmlFor="customerAddress" className="absolute  text-gray-900 dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-900 peer-focus:dark:text-indigo-900ss peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Shipping Address</label>
+                                {errors.customerAddress?.type === 'required' && <span className='text-red-600'>{errors.customerAddress.message}</span>}
                             </div>
 
                             {/* Purchase amount field */}
