@@ -1,5 +1,6 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+// import { useForm } from "react-hook-form";
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.init';
@@ -9,7 +10,49 @@ import Loading from '../../../Shared/Loading/Loading';
 const ShowAllOrders = ({ data, index, refetch: refetchOrders }) => {
     const { _id, productID, customerEmail, price, quantity, status, paymentStatus } = data;
     const { isLoading, data: items, refetch } = useItems();
+    // const { register, formState: { errors }, handleSubmit, getValues } = useForm({ mode: "onChange" });
     const navigate = useNavigate();
+
+    const [newStatus, setNewStatus] = useState('');
+
+    useEffect(() => {
+
+        if (newStatus !== '') {
+
+            const newValue = { newStatus };
+
+            fetch(`http://localhost:5000/order/${_id}`,
+                {
+                    method: 'PATCH',
+                    headers: {
+                        'content-type': 'application/json',
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(newValue)
+                })
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/')
+                    }
+                    return res.json()
+                })
+                .then(updateResult => {
+                    if (updateResult.acknowledged === true) {
+                        swal("Order status updated successfully", {
+                            icon: "success",
+                        });
+                        refetchOrders();
+                    }
+                    else {
+                        swal("Something is wrong!", {
+                            icon: "error",
+                        });
+                    }
+                })
+        }
+    }, [newStatus, _id, navigate, refetchOrders])
 
     if (isLoading) {
         return <Loading />;
@@ -70,10 +113,23 @@ const ShowAllOrders = ({ data, index, refetch: refetchOrders }) => {
             <td className='py-2 pl-5'>{item.name}</td>
             <td className='py-2 pl-5'>{quantity}</td>
             <td className='py-2 pl-5'>{price}</td>
-            <td className='py-2 pl-5 font-bold'>{status}</td>
             <td className='py-2 pl-5 font-bold'>{paymentStatus === 'Unpaid'
                 ?
-                <button onClick={deleteOrder} className='text-white text-sm bg-red-600 hover:bg-secondary py-1 px-3 font-semibold rounded'>Cancel</button>
+                <span className='text-red-600'>Pending</span>
+                :
+                <select name='newStatus' value={status} onChange={e => setNewStatus(e.target.value)} className="select select-primary w-4/5 bg-white border">
+                    <option value={status} disabled>{status}</option>
+                    <option value='Pending'>Pending</option>
+                    <option value='Processing'>Processing</option>
+                    <option value='Shipped'>Shipped</option>
+                </select>
+            }</td>
+            <td className='py-2 pl-5 font-bold'>{paymentStatus === 'Unpaid'
+                ?
+                <>
+                    <span className='text-red-600'>{paymentStatus}</span>
+                    <button onClick={deleteOrder} className='text-white ml-3 text-sm bg-red-600 hover:bg-secondary py-1 px-3 font-semibold rounded'>Cancel</button>
+                </>
                 :
                 <span className='text-primary'>{paymentStatus}</span>}</td>
         </tr>
