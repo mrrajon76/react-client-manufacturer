@@ -22,6 +22,7 @@ import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import UpdateProfile from './Pages/Dashboard/MyProfile/UpdateProfile/UpdateProfile';
 import AllUsers from './Pages/Dashboard/AllUsers/AllUsers';
 import RequireAdmin from './Pages/Users/RequireAdmin/RequireAdmin';
+import Payment from './Pages/Items/Purchase/Payment/Payment';
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
         <Route path='/purchase/:id' element={
           <RequireAuth>
             <Purchase />
+          </RequireAuth>
+        } />
+        <Route path='/purchase/payment/:id' element={
+          <RequireAuth>
+            <Payment />
           </RequireAuth>
         } />
         <Route path='/dashboard' element={

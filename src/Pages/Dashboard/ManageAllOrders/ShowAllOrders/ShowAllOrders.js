@@ -8,7 +8,7 @@ import useItems from '../../../../hooks/useItems';
 import Loading from '../../../Shared/Loading/Loading';
 
 const ShowAllOrders = ({ data, index, refetch: refetchOrders }) => {
-    const { _id, productID, customerEmail, price, quantity, status, paymentStatus } = data;
+    const { _id, productID, customerEmail, price, quantity, status, paymentStatus, transactionID } = data;
     const { isLoading, data: items, refetch } = useItems();
     // const { register, formState: { errors }, handleSubmit, getValues } = useForm({ mode: "onChange" });
     const navigate = useNavigate();
@@ -108,12 +108,12 @@ const ShowAllOrders = ({ data, index, refetch: refetchOrders }) => {
 
     return (
         <tr className='border-b'>
-            <td className='py-2 pl-5 text-sm hidden md:block'>{index + 1}</td>
-            <td className='py-2 pl-5'>{customerEmail}</td>
-            <td className='py-2 pl-5'>{item.name}</td>
-            <td className='py-2 pl-5'>{quantity}</td>
-            <td className='py-2 pl-5'>{price}</td>
-            <td className='py-2 pl-5 font-bold'>{paymentStatus === 'Unpaid'
+            <td className='py-2 pl-3 hidden md:block text-sm'>{index + 1}</td>
+            <td className='py-2 pl-3'>{customerEmail}</td>
+            <td className='py-2 pl-3'>{item.name.slice(0, 26)}...</td>
+            <td className='py-2 pl-3'>{quantity}</td>
+            <td className='py-2 pl-3'>{price}</td>
+            <td className='py-2 pl-3 font-bold'>{paymentStatus === 'Unpaid'
                 ?
                 <span className='text-red-600'>Pending</span>
                 :
@@ -124,14 +124,19 @@ const ShowAllOrders = ({ data, index, refetch: refetchOrders }) => {
                     <option value='Shipped'>Shipped</option>
                 </select>
             }</td>
-            <td className='py-2 pl-5 font-bold'>{paymentStatus === 'Unpaid'
+            <td className='py-2 pl-3 font-bold'>{paymentStatus === 'Unpaid'
                 ?
                 <>
                     <span className='text-red-600'>{paymentStatus}</span>
                     <button onClick={deleteOrder} className='text-white ml-3 text-sm bg-red-600 hover:bg-secondary py-1 px-3 font-semibold rounded'>Cancel</button>
                 </>
                 :
-                <span className='text-primary'>{paymentStatus}</span>}</td>
+                <>
+                    <span className='text-primary'>{paymentStatus}</span>
+                    <br />
+                    <span className='text-xs text-gray-500'>{transactionID}</span>
+                </>
+            }</td>
         </tr>
     );
 };

@@ -70,10 +70,8 @@ const Purchase = () => {
                 })
                 .then(orderResult => {
                     if (orderResult.addOrder.acknowledged === true && orderResult.updateProduct.acknowledged) {
-                        swal('Order Confirmed', {
-                            icon: "success"
-                        });
                         refetch();
+                        navigate(`/purchase/payment/${orderResult.addOrder.insertedId}`);
                     }
                 })
         }

@@ -21,6 +21,7 @@ const ManageItems = () => {
                             <th className='py-2 pl-5'>No.</th>
                             <th className='py-2 pl-5'>Image</th>
                             <th className='py-2 pl-5'>Name</th>
+                            <th className='py-2 pl-5'>Stock</th>
                             <th className='py-2 pl-5'>Actions</th>
                         </tr>
                     </thead>

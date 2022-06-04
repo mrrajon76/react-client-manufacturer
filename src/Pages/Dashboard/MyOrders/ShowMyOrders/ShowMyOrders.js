@@ -1,13 +1,13 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import auth from '../../../../firebase.init';
 import useItems from '../../../../hooks/useItems';
 import Loading from '../../../Shared/Loading/Loading';
 
 const ShowMyOrders = ({ data, index, refetch: refetchOrders }) => {
-    const { _id, productID, price, quantity, status, paymentStatus } = data;
+    const { _id, productID, price, quantity, status, paymentStatus, transactionID } = data;
     const { isLoading, data: items, refetch } = useItems();
     const navigate = useNavigate();
 
@@ -73,11 +73,16 @@ const ShowMyOrders = ({ data, index, refetch: refetchOrders }) => {
             <td className='py-2 pl-2 md:pl-5 font-bold'>{paymentStatus === 'Unpaid'
                 ?
                 <>
-                    <button className='text-white text-sm bg-primary hover:bg-secondary py-1 px-3 mb-2 md:mb-0 mr-0 md:mr-2 font-semibold rounded'>Pay Now</button>
+                    <Link to={`/purchase/payment/${_id}`}><button className='text-white text-sm bg-primary hover:bg-secondary py-1 px-3 mb-2 md:mb-0 mr-0 md:mr-2 font-semibold rounded'>Pay Now</button></Link>
                     <button onClick={deleteOrder} className='text-white text-sm bg-red-600 hover:bg-secondary py-1 px-3 font-semibold rounded'>Cancel</button>
                 </>
                 :
-                <span className='text-primary'>{paymentStatus}</span>}</td>
+                <>
+                    <span className='text-primary'>{paymentStatus}</span>
+                    <br />
+                    <span className='text-gray-500 text-xs'>{transactionID}</span>
+                </>
+            }</td>
         </tr>
     );
 };

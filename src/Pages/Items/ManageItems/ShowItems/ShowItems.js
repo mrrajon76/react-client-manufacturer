@@ -6,7 +6,7 @@ import auth from '../../../../firebase.init';
 
 const ShowItems = ({ data, index, refetch }) => {
     const navigate = useNavigate();
-    const { _id, image, name } = data;
+    const { _id, image, name, stock } = data;
 
     const deleteItem = async () => {
         swal({
@@ -52,6 +52,7 @@ const ShowItems = ({ data, index, refetch }) => {
                 <img src={image} alt="" className='w-20' />
             </td>
             <td className='py-2 pl-5 font-bold'>{name}</td>
+            <td className='py-2 pl-5 font-bold'>{stock}</td>
             <td className='py-2 pl-5'>
                 <Link to={`/dashboard/manage-items/${_id}`}><button className='inline-block mb-2 lg:mb-0 md:mr-3 text-white text-sm bg-primary hover:bg-secondary py-1 px-5 font-semibold rounded'>Manage</button></Link>
                 <button onClick={deleteItem} className='inline-block text-white text-sm bg-red-500 hover:bg-secondary py-1 px-5 font-semibold rounded'>Delete</button>
