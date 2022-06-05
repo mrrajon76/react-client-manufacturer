@@ -51,7 +51,7 @@ const Purchase = () => {
         const orderDetails = { formData, newStock, newSold };
 
         if (formData) {
-            fetch(`http://localhost:5000/order`,
+            fetch(`https://polar-cove-29814.herokuapp.com/order`,
                 {
                     method: 'POST',
                     headers: {

@@ -27,7 +27,7 @@ const SingleItem = () => {
                 if (value > 0) {
                     const newStock = { value: stock + parseInt(value) };
 
-                    fetch(`http://localhost:5000/product/${_id}`,
+                    fetch(`https://polar-cove-29814.herokuapp.com/product/${_id}`,
                         {
                             method: 'PATCH',
                             headers: {
@@ -72,7 +72,7 @@ const SingleItem = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/product/${_id}`,
+                    fetch(`https://polar-cove-29814.herokuapp.com/product/${_id}`,
                         {
                             method: 'DELETE',
                             headers: {

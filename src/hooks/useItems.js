@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 
 const useItems = () => {
     const { isLoading, data, refetch } = useQuery(['allItems'], () =>
-        fetch("http://localhost:5000/products")
+        fetch("https://polar-cove-29814.herokuapp.com/products")
             .then(res => res.json())
     )
 

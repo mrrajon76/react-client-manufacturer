@@ -21,7 +21,7 @@ const ShowAllOrders = ({ data, index, refetch: refetchOrders }) => {
 
             const newValue = { newStatus };
 
-            fetch(`http://localhost:5000/order/${_id}`,
+            fetch(`https://polar-cove-29814.herokuapp.com/order/${_id}`,
                 {
                     method: 'PATCH',
                     headers: {
@@ -76,7 +76,7 @@ const ShowAllOrders = ({ data, index, refetch: refetchOrders }) => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/orders/${_id}`,
+                    fetch(`https://polar-cove-29814.herokuapp.com/orders/${_id}`,
                         {
                             method: 'DELETE',
                             headers: {

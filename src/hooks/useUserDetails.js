@@ -11,7 +11,7 @@ const useUserDetails = () => {
     const currentUser = user.email;
 
     const { isLoading, data, refetch } = useQuery(['userDetails', currentUser], () =>
-        fetch(`http://localhost:5000/user/${currentUser}`,
+        fetch(`https://polar-cove-29814.herokuapp.com/user/${currentUser}`,
             {
                 method: 'GET',
                 headers: {

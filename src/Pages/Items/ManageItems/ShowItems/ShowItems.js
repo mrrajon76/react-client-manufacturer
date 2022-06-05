@@ -18,7 +18,7 @@ const ShowItems = ({ data, index, refetch }) => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/product/${_id}`,
+                    fetch(`https://polar-cove-29814.herokuapp.com/product/${_id}`,
                         {
                             method: 'DELETE',
                             headers: {

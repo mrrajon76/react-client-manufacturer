@@ -12,7 +12,7 @@ const useUserStatus = user => {
         const email = user?.email;
 
         if (email) {
-            fetch(`http://localhost:5000/user/admin/${email}`,
+            fetch(`https://polar-cove-29814.herokuapp.com/user/admin/${email}`,
                 {
                     method: 'GET',
                     headers: {

@@ -19,7 +19,7 @@ const AddAReview = () => {
     const onSubmit = formData => {
         formData.name = data?.name;
 
-        fetch('http://localhost:5000/review',
+        fetch('https://polar-cove-29814.herokuapp.com/review',
             {
                 method: 'POST',
                 headers: {

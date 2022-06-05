@@ -7,7 +7,7 @@ const useAllUsers = () => {
     const navigate = useNavigate();
 
     const { isLoading, data, refetch } = useQuery(['allUsers'], () =>
-        fetch('http://localhost:5000/users',
+        fetch('https://polar-cove-29814.herokuapp.com/users',
             {
                 method: 'GET',
                 headers: {

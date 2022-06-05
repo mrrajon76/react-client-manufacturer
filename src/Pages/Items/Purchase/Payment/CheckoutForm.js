@@ -14,7 +14,7 @@ const CheckoutForm = ({ order, refetch, processing }) => {
     const [clientSecret, setClientSecret] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://polar-cove-29814.herokuapp.com/create-payment-intent', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -62,66 +62,67 @@ const CheckoutForm = ({ order, refetch, processing }) => {
                 icon: "error"
             });
         }
-
-        processing(true);
-        // Complete payment process
-        const { paymentIntent, error: paymentError } = await stripe.confirmCardPayment(clientSecret, {
-            payment_method: {
-                card: card,
-                billing_details: {
-                    name: order.customerName,
-                    email: order.customerEmail
-                },
-            },
-        });
-
-        if (paymentError) {
-            processing(false);
-            swal(`${paymentError.message}`, {
-                icon: "error"
-            });
-        }
         else {
-            const id = order._id;
-            const newStatus = 'Processing';
-            const newPaymentStatus = 'Paid';
-            const transactionID = paymentIntent.id;
-
-            const orderToUpdate = { newStatus, newPaymentStatus, transactionID };
-
-            // update order status and add transactionID
-            fetch(`http://localhost:5000/payment/order/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            processing(true);
+            // Complete payment process
+            const { paymentIntent, error: paymentError } = await stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: order.customerName,
+                        email: order.customerEmail
+                    },
                 },
-                body: JSON.stringify(orderToUpdate),
-            })
-                .then(res => {
-                    if (res.status === 401 || res.status === 403) {
-                        signOut(auth);
-                        localStorage.removeItem('accessToken');
-                        navigate('/')
-                    }
-                    return res.json()
-                })
-                .then((data) => {
-                    processing(false);
-                    if (data.acknowledged === true) {
-                        swal(`Payment Successful.
-                        Transaction ID: ${transactionID}`, {
-                            icon: "success"
-                        });
-                        refetch();
-                        navigate('/dashboard/my-orders');
-                    }
-                    else {
-                        swal('Something is wrong', {
-                            icon: "error"
-                        });
-                    }
+            });
+
+            if (paymentError) {
+                processing(false);
+                swal(`${paymentError.message}`, {
+                    icon: "error"
                 });
+            }
+            else {
+                const id = order._id;
+                const newStatus = 'Processing';
+                const newPaymentStatus = 'Paid';
+                const transactionID = paymentIntent.id;
+
+                const orderToUpdate = { newStatus, newPaymentStatus, transactionID };
+
+                // update order status and add transactionID
+                fetch(`https://polar-cove-29814.herokuapp.com/payment/order/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(orderToUpdate),
+                })
+                    .then(res => {
+                        if (res.status === 401 || res.status === 403) {
+                            signOut(auth);
+                            localStorage.removeItem('accessToken');
+                            navigate('/')
+                        }
+                        return res.json()
+                    })
+                    .then((data) => {
+                        processing(false);
+                        if (data.acknowledged === true) {
+                            swal(`Payment Successful.
+                        Transaction ID: ${transactionID}`, {
+                                icon: "success"
+                            });
+                            refetch();
+                            navigate('/dashboard/my-orders');
+                        }
+                        else {
+                            swal('Something is wrong', {
+                                icon: "error"
+                            });
+                        }
+                    });
+            }
         }
     }
 

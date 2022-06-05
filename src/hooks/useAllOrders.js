@@ -7,7 +7,7 @@ const useAllOrders = () => {
     const navigate = useNavigate();
 
     const { isLoading, data, refetch } = useQuery(['allOrders'], () =>
-        fetch(`http://localhost:5000/orders`,
+        fetch(`https://polar-cove-29814.herokuapp.com/orders`,
             {
                 method: 'GET',
                 headers: {

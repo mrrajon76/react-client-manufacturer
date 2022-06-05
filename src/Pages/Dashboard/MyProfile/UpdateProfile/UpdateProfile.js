@@ -27,7 +27,7 @@ const UpdateProfile = () => {
         const updatedUser = { name, email, phone, postal, address, linkedin, image };
 
         if (name && email && phone && postal && address) {
-            fetch(`http://localhost:5000/user/${email}`,
+            fetch(`https://polar-cove-29814.herokuapp.com/user/${email}`,
                 {
                     method: 'PUT',
                     headers: {

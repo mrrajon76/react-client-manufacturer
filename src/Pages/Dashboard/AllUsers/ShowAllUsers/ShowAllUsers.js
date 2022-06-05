@@ -9,7 +9,7 @@ const ShowAllUsers = ({ data, refetch }) => {
     const navigate = useNavigate();
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`,
+        fetch(`https://polar-cove-29814.herokuapp.com/user/admin/${email}`,
             {
                 method: 'PATCH',
                 headers: {

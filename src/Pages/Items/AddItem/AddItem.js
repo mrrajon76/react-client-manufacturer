@@ -15,7 +15,7 @@ const AddItem = () => {
         formData.stock = parseInt(formData.stock);
         formData.moq = parseInt(formData.moq);
 
-        fetch('http://localhost:5000/product',
+        fetch('https://polar-cove-29814.herokuapp.com/product',
             {
                 method: 'POST',
                 headers: {

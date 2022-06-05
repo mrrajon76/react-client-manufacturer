@@ -20,7 +20,7 @@ const Payment = () => {
     const [paymentProcessing, setPaymentProcessing] = useState(false);
 
     const { isLoading, data, refetch } = useQuery(['singleOrder', id], () =>
-        fetch(`http://localhost:5000/payment/order/${id}`,
+        fetch(`https://polar-cove-29814.herokuapp.com/payment/order/${id}`,
             {
                 method: 'GET',
                 headers: {
