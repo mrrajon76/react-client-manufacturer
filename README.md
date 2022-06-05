@@ -43,3 +43,4 @@ PC Components is a manufacturer company website. It has few special functionalit
 - React Sweet Alert
 - React Taostify
 - Tailwind CSS, Daisy UI elements
+- Firebase Hosting
